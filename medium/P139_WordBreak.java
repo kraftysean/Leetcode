@@ -3,8 +3,18 @@ import java.util.*;
 class P139_WordBreak {
 
   public boolean wordBreak(String s, List<String> wordDict) {
-    /* TODO: DP solution */
+    boolean[] dp = new boolean[s.length() + 1];
+    dp[0] = true;
 
-    return false;
+    for(int i = 1; i <= s.length(); i++) {
+      for(int j = 0; j < i; j++) {
+        dp[i] = dp[j] && wordDict.contains(s.substring(j, i));
+
+        if(dp[i])
+          break;
+      }
+    }
+
+    return dp[s.length()];
   }
 }

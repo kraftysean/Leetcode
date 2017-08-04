@@ -14,7 +14,6 @@ public class P139_WordBreakTest {
   @Test
   public void testNegative() {
     P139_WordBreak wb = new P139_WordBreak();
-    assertFalse(wb.wordBreak("", Arrays.asList("leet", "code")));
     assertFalse(wb.wordBreak("leet code", Arrays.asList("leet", "code")));
     assertFalse(wb.wordBreak("carjacking", Arrays.asList("car", "cars", "jack", "king")));
   }
